@@ -1,0 +1,117 @@
+print("======Selamat Datang Di Klinik Gigi Dentalcare======")
+print("Daftar pelayanan dan harga yang tersedia di Klinik Dentalcare")
+
+from prettytable import PrettyTable
+
+#tabel untuk memperlihatkan layanan dan harga yang tersedia diKlinik Dentalcare
+table = PrettyTable()
+table.field_names = ["No", "Layanan", "Harga"]
+table.add_row([1, "Bersihkan Karang gigi", 350000])
+table.add_row([2, "Tambal gigi", 300000])
+table.add_row([3, "Cabut gigi", 200000])
+table.add_row([4, "Pasang behel", 500000])
+print(table)
+
+#penggunaan CRUD admin
+# Fungsi Create
+def create():
+    no = int(input("Masukkan nomor: "))
+    layanan = input("Masukkan layanan: ")
+    harga = int(input("Masukkan harga: "))
+    table.add_row([no, layanan, harga])
+    print("Data berhasil ditambahkan.")
+    print(table)
+
+# Fungsi Read
+def read():
+    print(table)
+
+# Fungsi Update
+def update():
+    no = int(input("Masukkan nomor layanan yang ingin diupdate: "))
+    layanan = input("Masukkan layanan baru: ")
+    harga = int(input("Masukkan harga baru: "))
+    table.add_row([no, layanan, harga])
+    print("Data berhasil diupdate.")
+    print(table)
+
+# Fungsi Delete
+def delete():
+    no = int(input("Masukkan nomor layanan yang ingin dihapus: "))
+    for i in range(len(table._rows)):
+        if table._rows[i][0] == no:
+            table.del_row(i)
+            print("Data berhasil dihapus.")
+            
+    else:
+        print("Nomor layanan tidak ditemukan.")
+
+#nama dayang akan dimasukkan ketika admin akan login
+nama_admin = ("Mita")
+password_admin = ("1684")
+
+#Menu Utama 
+print("="*42)
+print("Selamat Datang di Klinik Gigi Dentalcare")
+print("="*42)
+print("Menu Utama")
+
+#untuk menentukana anda admin atau pasien
+print("1. Login sebagai Admin")
+print("2. Login sebagai pasien")
+print("3. Exit")
+pilihan = input("Masukkan tindakan: ")
+
+#percabangan untuk admin dalam penggunaan CRUD
+if pilihan == "1":
+    print("="*42)
+    print("Login Admin")
+    print("="*42)
+    Nama = input("Masukkan Nama: ")
+    Password = input("Masukkan Password: ")
+    
+#Pengulangan dalam memilih CRUD
+    while True:
+        if Nama == nama_admin and Password == password_admin:
+            print("Selamat datang, Admin")
+            print("Menu Admin")
+            print("1. Create")
+            print("2. Read")
+            print("3. Update")
+            print("4. Delete")
+            pilihan = input("Masukkan pilihan: ")
+
+        if pilihan == "1":
+            create()
+        elif pilihan == "2":
+            read()
+        elif pilihan == "3":
+            update()
+        elif pilihan == "4":
+            delete()
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+            break
+
+        ulangi = input("Apakah Anda ingin melakukan operasi lain? (ya/tidak): ")
+        
+        
+#Menu Pasien
+elif pilihan == "2":
+    print("Selamat datang, Pasien Terimah kasih telah Datang diklinik Dentalcare")
+    print("Menu Pasien")
+    print("1. Pendaftaran")
+    print("2. Keluar")
+    pilihan = input("Masukkan pilihan: ")
+
+    if pilihan == "1":
+        nama = input("Masukkan Nama Pasien: ")
+        alamat = input("Masukkan Alamat Pasien: ")
+        pelayanan = input("Masukkan pelayanan yang diinginkan pasien: ")
+        print(f"{nama} berhasil mendaftar dalam antrian.")
+
+elif pilihan == "3":
+    print("Silahkan keluar. Terima kasih telah datang di Klinik Dentalcare.")
+
+else:
+    print("Pilihan Anda tidak valid. Silakan memilih 1/2/3.")
