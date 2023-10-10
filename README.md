@@ -11,4 +11,17 @@ ini merupakan flowchart raptor dari program
 
 **#Penjelasan output**
 Penjelasan dari output program: 
-
+![Screenshot (85)](https://github.com/nurulasmita77/postest2/assets/144861672/ed178fff-ba51-432d-90ae-964a4f50a338)
+![Screenshot (86)](https://github.com/nurulasmita77/postest2/assets/144861672/8ea0ee5c-4843-43ca-8507-2df29c0b40a0)
+1. awal program
+   yang pertama akan tampil hasil output ==selamat datang di klinik gigi dentalcare== dan juga hasil dari table yang tersedia kemudian dibawahnya terdapat 3 pilihan dengan lanjutan yang berbeda yaitu 1. login sebagai admin, 2. login sebagai pasien dan 3. keluar. Ketika anda memilih opsi 1 makan akan menuju program login admin dan menu admin CRUD, ketika anda pilih opsi 2 maka akan menuju ke program menu pasien.
+2. opsi login sebagai admin
+   yang pertama akan telebih dahulu melakukan login untuk menambahkan username dan password (username= Mita dan Password = 1684) apabila berhasil login akan dilanjutkan dengan menu opsi CRUD yaitu 1. create, 2. read, 3. Update, 4. detete.
+3. opsi CRUD dalam menu admin
+   **Create**
+   Jika anada memilih 1.create yaitu untuk menambah, maka akan disuruh untuk memasukkan no,layanan baru, dan juga harga baru.
+   **Read**
+   jika anda memilih 2. Read yaitu untuk menampilkan, maka program akan membaca dan menampilkan output seluruhnya.
+   **Update**
+   Jika anda memilih 3. Update yaitu untuk merubah data, maka akan disuruh untuk memasukkan no, layanan, dan harga yang ingin di
+   
